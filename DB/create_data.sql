@@ -1,21 +1,3 @@
-CREATE TABLE people ( 
-  person_id   INTEGER NOT NULL PRIMARY KEY, 
-  given_name  VARCHAR2(100) NOT NULL, 
-  family_name VARCHAR2(100) NOT NULL, 
-  title       VARCHAR2(20), 
-  birth_date  DATE 
-);
-
-CREATE TABLE patients ( 
-  patient_id          INTEGER NOT NULL PRIMARY KEY REFERENCES people (person_id), 
-  last_admission_date DATE 
-);
-
-CREATE TABLE staff ( 
-  staff_id   INTEGER NOT NULL PRIMARY KEY REFERENCES people (person_id), 
-  hired_date DATE 
-);
-
 INSERT INTO people 
 VALUES (1, 'Dave', 'Badger', 'Mr', date'1960-05-01');
 INSERT INTO people (person_id, given_name, family_name, title) 
